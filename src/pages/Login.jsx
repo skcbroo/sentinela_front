@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -21,9 +20,12 @@ export default function Login() {
         senha,
       });
 
+      console.log("🚀 Dados recebidos do backend:", res.data); // Diagnóstico
+
       const { token, role } = res.data;
 
       if (role !== "admin") {
+        console.error("⚠️ Role inválido recebido:", role);
         setErro("Acesso restrito: apenas administradores.");
         setCarregando(false);
         return;
@@ -33,6 +35,7 @@ export default function Login() {
       localStorage.setItem("role", role);
       navigate("/admin");
     } catch (err) {
+      console.error("❌ Erro no login:", err);
       setErro("E-mail ou senha inválidos.");
     } finally {
       setCarregando(false);
