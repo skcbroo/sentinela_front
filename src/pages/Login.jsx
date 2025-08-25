@@ -16,6 +16,9 @@ import {
   Linkedin
 } from 'lucide-react';
 
+
+function LandingPage() {
+
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 const [selectedPlan, setSelectedPlan] = useState('');
 const [formData, setFormData] = useState({
@@ -552,4 +555,7 @@ return (
       </a>
     </div>
   );
+}
+
+export default App;
 
