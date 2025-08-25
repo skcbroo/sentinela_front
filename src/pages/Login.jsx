@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 
-function LandingPage() {
+export default function LandingPage() {
 
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 const [selectedPlan, setSelectedPlan] = useState('');
@@ -557,5 +557,5 @@ return (
   );
 }
 
-export default App;
+
 
